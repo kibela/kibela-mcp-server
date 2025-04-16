@@ -1,0 +1,43 @@
+query SearchNote(
+  $query: String!
+  $resources: [SearchResourceKind!]
+  $coediting: Boolean
+  $updated: SearchDate
+  $groupIds: [ID!]
+  $folderIds: [ID!]
+  $likerIds: [ID!]
+  $isArchived: Boolean
+  $sortBy: SearchSortKind
+  $first: Int!
+) {
+  search(
+    query: $query
+    resources: $resources
+    coediting: $coediting
+    updated: $updated
+    groupIds: $groupIds
+    folderIds: $folderIds
+    likerIds: $likerIds
+    isArchived: $isArchived
+    sortBy: $sortBy
+    first: $first
+  ) {
+    edges {
+      node {
+        document {
+          ... on Node {
+            id
+          }
+        }
+        title
+        url
+        contentSummaryHtml
+        path
+        author {
+          account
+          realName
+        }
+      }
+    }
+  }
+}

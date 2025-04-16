@@ -1,0 +1,78 @@
+query GetNoteFromPath($path: String!, $first: Int!) {
+  noteFromPath(path: $path) {
+    id
+    title
+    content
+    url
+    author {
+      account
+      realName
+    }
+    folders(first: $first) {
+      edges {
+        node {
+          id
+          name
+          fullName
+          fixedPath
+          group {
+            id
+            name
+          }
+        }
+      }
+    }
+    comments(first: $first) {
+      edges {
+        node {
+          id
+          anchor
+          content
+          author {
+            account
+            realName
+          }
+          replies(first: $first) {
+            edges {
+              node {
+                id
+                anchor
+                content
+                author {
+                  account
+                  realName
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    inlineComments(first: $first) {
+      edges {
+        node {
+          id
+          anchor
+          content
+          author {
+            account
+            realName
+          }
+          replies(first: $first) {
+            edges {
+              node {
+                id
+                anchor
+                content
+                author {
+                  account
+                  realName
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

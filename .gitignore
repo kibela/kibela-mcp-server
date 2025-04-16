@@ -1,0 +1,7 @@
+node_modules
+dist
+bin
+.env*
+coverage
+.pnpm-store
+kibela-mcp-server-config.json

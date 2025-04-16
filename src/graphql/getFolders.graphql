@@ -1,0 +1,10 @@
+query GetFolders($first: Int!) {
+  folders(first: $first) {
+    edges {
+      node {
+        id
+        name
+      }
+    }
+  }
+}

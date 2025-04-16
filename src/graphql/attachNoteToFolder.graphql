@@ -1,0 +1,7 @@
+mutation AttachNoteToFolder($input: AttachNoteToFolderInput!) {
+  attachNoteToFolder(input: $input) {
+    note {
+      id
+    }
+  }
+}

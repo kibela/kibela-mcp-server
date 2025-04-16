@@ -1,0 +1,15 @@
+query SearchFolder($query: String!, $first: Int!) {
+  searchFolder(query: $query, first: $first) {
+    edges {
+      node {
+        name
+        fixedPath
+
+        group {
+          name
+          isPrivate
+        }
+      }
+    }
+  }
+}

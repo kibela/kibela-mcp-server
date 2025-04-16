@@ -1,0 +1,29 @@
+query GetFolder($id: ID!, $first: Int!) {
+  folder(id: $id) {
+    name
+    fullName
+    fixedPath
+    createdAt
+    updatedAt
+    group {
+      id
+      name
+    }
+    folders(first: $first) {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+    notes(first: $first) {
+      edges {
+        node {
+          id
+          title
+        }
+      }
+    }
+  }
+}

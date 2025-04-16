@@ -1,0 +1,10 @@
+{
+  "reviewPromptName": "review_kibela_note",
+  "reviewMessage": "Please review this article. Please reply in English, and the text after the review should be in the language of the article. Use get_kibela_note_from_path_or_url tool to get Kibela note. Use update_kibela_note_content tool to update Kibela note.",
+  "searchPromptName": "search_kibela",
+  "searchMessage": "Search Kibela for this keyword or content. Please reply in English, and use search_kibela_note tool to search.",
+  "relatedNotePromptName": "Explore related Kibela articles",
+  "relatedNoteMessage": "Please explore articles that may be related to the Kibela article at this URL. The reply should be in English, use the search_kibela_note tool to search for articles and the get_kibela_note_by_relay_id tool to view them.",
+  "reflectCommentPromptName": "Reflect your comment on Kibela note",
+  "reflectCommentMessage": "Please update the Kibela article at this URL to reflect the comment in this article. Please reply in Japanese and use the get_kibela_note_from_path_or_url tool to reference the article."
+}

@@ -1,0 +1,48 @@
+query GetFeedSections($kind: FeedKind!, $groupId: ID!, $first: Int!) {
+  feedSections(kind: $kind, groupId: $groupId, first: $first) {
+    edges {
+      node {
+        ... on FeedNote {
+          date
+          note {
+            id
+            title
+            contentSummaryHtml
+          }
+        }
+        ... on FeedFolderParcel {
+          date
+          folder {
+            id
+            name
+          }
+          notes(first: $first) {
+            edges {
+              node {
+                id
+                title
+                contentSummaryHtml
+              }
+            }
+          }
+        }
+        ... on FeedUserParcel {
+          date
+          user {
+            account
+            realName
+          }
+          notes(first: $first) {
+            edges {
+              node {
+                id
+                title
+                contentSummaryHtml
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

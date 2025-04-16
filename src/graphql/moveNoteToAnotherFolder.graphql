@@ -1,0 +1,7 @@
+mutation MoveNoteToAnotherFolder($input: MoveNoteToAnotherFolderInput!) {
+  moveNoteToAnotherFolder(input: $input) {
+    note {
+      id
+    }
+  }
+}

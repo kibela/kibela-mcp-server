@@ -1,0 +1,12 @@
+query GetGroups($first: Int!) {
+  groups(first: $first) {
+    edges {
+      node {
+        id
+        name
+        isDefault
+        isArchived
+      }
+    }
+  }
+}

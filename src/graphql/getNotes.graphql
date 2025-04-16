@@ -1,0 +1,11 @@
+query GetNotes($folderId: ID!, $first: Int!, $last: Int) {
+  notes(folderId: $folderId, first: $first, last: $last) {
+    edges {
+      node {
+        id
+        title
+        url
+      }
+    }
+  }
+}

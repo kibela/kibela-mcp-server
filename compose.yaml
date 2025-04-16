@@ -1,0 +1,17 @@
+services:
+  mcp:
+    build:
+      context: .
+      target: deps
+    command: pnpm dev
+    tty: true
+    stdin_open: true
+    extra_hosts:
+      - "${KIBELA_LOCALHOST}:host-gateway"
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      KIBELA_ORIGIN: ${KIBELA_ORIGIN}
+      KIBELA_ACCESS_TOKEN: ${KIBELA_ACCESS_TOKEN}
+      KIBELA_CODEGEN_URI: ${KIBELA_CODEGEN_URI}
+    volumes:
+      - .:/usr/src/app

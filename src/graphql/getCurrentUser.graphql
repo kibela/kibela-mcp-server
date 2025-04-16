@@ -1,0 +1,7 @@
+query GetCurrentUser {
+  currentUser {
+    account
+    realName
+    locale
+  }
+}

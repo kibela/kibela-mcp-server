@@ -1,0 +1,10 @@
+{
+  "reviewPromptName": "Kibelaの記事のレビュー",
+  "reviewMessage": "この記事をレビューしてください。返答は日本語で、レビュー後の本文は記事の言語にそろえてください。記事を参照するには get_kibela_note_from_path_or_url の tool を使ってください。ユーザーが記事を更新するように指示した時には update_kibela_note_content tool を使ってください。",
+  "searchPromptName": "Kibela内を検索",
+  "searchMessage": "このキーワードまたは内容についてKibelaで検索してください。返答は日本語で、検索には search_kibela_note tool を使ってください。",
+  "relatedNotePromptName": "Kibelaの関連記事を探す",
+  "relatedNoteMessage": "このURLのKibela記事に関連しそうな記事を探索してください。返答は日本語で、記事を検索する際には search_kibela_note tool を使って、閲覧する際には get_kibela_note_by_relay_id tool を使ってください。",
+  "reflectCommentPromptName": "Kibelaの記事にコメントを反映する",
+  "reflectCommentMessage": "このURLのKibelaの記事に、この記事にあるコメントを反映して、最新の情報に更新してください。返答は日本語で、記事の参照は、get_kibela_note_from_path_or_url tool を使ってください。"
+}
