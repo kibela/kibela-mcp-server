@@ -4,8 +4,8 @@
   <p>Kibela MCP Server is a <a href="https://modelcontextprotocol.io/introduction">Model Context Protocol (MCP)</a> server for Kibela.</p>
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/kibela/kibela-mcp-server)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kibela/kibela-mcp-server/CI)
-![GitHub License](https://img.shields.io/github/license/kibela/kibela-mcp-server)
+![GitHub Release Date](https://img.shields.io/github/release-date/kibela/kibela-mcp-server)
+![GitHub package.json dynamic](https://img.shields.io/github/package-json/license/kibela/kibela-mcp-server)
 ![GitHub package.json dynamic](https://img.shields.io/github/package-json/version/kibela/kibela-mcp-server)
 
 </div>
