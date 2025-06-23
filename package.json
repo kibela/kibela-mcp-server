@@ -48,7 +48,7 @@
     "@graphql-codegen/typescript-graphql-request": "^6.2.0",
     "@graphql-codegen/typescript-operations": "^4.6.0",
     "@parcel/watcher": "^2.5.1",
-    "@types/node": "^22.15.17",
+    "@types/node": "^24.0.3",
     "@vitest/coverage-v8": "3.1.1",
     "concurrently": "^9.1.2",
     "dotenv": "^16.5.0",
