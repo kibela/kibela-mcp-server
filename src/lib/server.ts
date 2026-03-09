@@ -6,6 +6,7 @@ import {
   createCommentSchema,
   createFolderSchema,
   createNoteSchema,
+  getCommentsSchema,
   getFeedSectionsSchema,
   getFolderFromPathSchema,
   getFolderSchema,
@@ -30,6 +31,7 @@ import { searchFolder } from "../callbacks/searchFolder.ts";
 import { getFolder } from "../callbacks/getFolder.ts";
 import { getNoteFromPath } from "../callbacks/getNoteFromPath.ts";
 import { createComment } from "../callbacks/createComment.ts";
+import { getComments } from "../callbacks/getComments.ts";
 import { createCommentReply } from "../callbacks/createCommentReply.ts";
 import { attachNoteToFolder } from "../callbacks/attachNoteToFolder.ts";
 import { getFolderFromPath } from "../callbacks/getFolderFromPath.ts";
@@ -117,6 +119,13 @@ server.tool(
   config.tools?.create_kibela_note?.description || "Create note in Kibela",
   createNoteSchema,
   createNote
+);
+server.tool(
+  "get_kibela_comments",
+  config.tools?.get_kibela_comments?.description ||
+    "Get comments on a note in Kibela",
+  getCommentsSchema,
+  getComments
 );
 server.tool(
   "create_kibela_comment",

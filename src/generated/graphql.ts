@@ -5337,6 +5337,14 @@ export type GetGroupsQueryVariables = Exact<{
 
 export type GetGroupsQuery = { __typename?: 'Query', groups: { __typename?: 'GroupConnection', edges?: Array<{ __typename?: 'GroupEdge', node?: { __typename?: 'Group', id: string, name: string, isDefault: boolean, isArchived: boolean } | null } | null> | null } };
 
+export type GetCommentsQueryVariables = Exact<{
+  id: Scalars['ID']['input'];
+  first: Scalars['Int']['input'];
+}>;
+
+
+export type GetCommentsQuery = { __typename?: 'Query', note: { __typename?: 'Note', comments: { __typename?: 'CommentConnection', edges?: Array<{ __typename?: 'CommentEdge', node?: { __typename?: 'Comment', id: string, anchor: string, content: string, createdAt: any, updatedAt: any, author: { __typename?: 'User', account: string, realName: string }, replies: { __typename?: 'CommentReplyConnection', edges?: Array<{ __typename?: 'CommentReplyEdge', node?: { __typename?: 'CommentReply', id: string, anchor: string, content: string, createdAt: any, updatedAt: any, author: { __typename?: 'User', account: string, realName: string } } | null } | null> | null } } | null } | null> | null }, inlineComments: { __typename?: 'InlineCommentConnection', edges?: Array<{ __typename?: 'InlineCommentEdge', node?: { __typename?: 'InlineComment', id: string, anchor: string, content: string, createdAt: any, updatedAt: any, author: { __typename?: 'User', account: string, realName: string }, replies: { __typename?: 'CommentReplyConnection', edges?: Array<{ __typename?: 'CommentReplyEdge', node?: { __typename?: 'CommentReply', id: string, anchor: string, content: string, createdAt: any, updatedAt: any, author: { __typename?: 'User', account: string, realName: string } } | null } | null> | null } } | null } | null> | null } } };
+
 export type GetNoteQueryVariables = Exact<{
   id: Scalars['ID']['input'];
   first: Scalars['Int']['input'];
@@ -5589,6 +5597,72 @@ export const GetGroupsDocument = gql`
         name
         isDefault
         isArchived
+      }
+    }
+  }
+}
+    `;
+export const GetCommentsDocument = gql`
+    query GetComments($id: ID!, $first: Int!) {
+  note(id: $id) {
+    comments(first: $first) {
+      edges {
+        node {
+          id
+          anchor
+          content
+          author {
+            account
+            realName
+          }
+          createdAt
+          updatedAt
+          replies(first: $first) {
+            edges {
+              node {
+                id
+                anchor
+                content
+                author {
+                  account
+                  realName
+                }
+                createdAt
+                updatedAt
+              }
+            }
+          }
+        }
+      }
+    }
+    inlineComments(first: $first) {
+      edges {
+        node {
+          id
+          anchor
+          content
+          author {
+            account
+            realName
+          }
+          createdAt
+          updatedAt
+          replies(first: $first) {
+            edges {
+              node {
+                id
+                anchor
+                content
+                author {
+                  account
+                  realName
+                }
+                createdAt
+                updatedAt
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -5874,6 +5948,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     GetGroups(variables: GetGroupsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetGroupsQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetGroupsQuery>(GetGroupsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetGroups', 'query', variables);
+    },
+    GetComments(variables: GetCommentsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetCommentsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetCommentsQuery>(GetCommentsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetComments', 'query', variables);
     },
     GetNote(variables: GetNoteQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetNoteQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetNoteQuery>(GetNoteDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetNote', 'query', variables);

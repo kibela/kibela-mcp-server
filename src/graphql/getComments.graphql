@@ -1,0 +1,64 @@
+query GetComments($id: ID!, $first: Int!) {
+  note(id: $id) {
+    comments(first: $first) {
+      edges {
+        node {
+          id
+          anchor
+          content
+          author {
+            account
+            realName
+          }
+          createdAt
+          updatedAt
+          replies(first: $first) {
+            edges {
+              node {
+                id
+                anchor
+                content
+                author {
+                  account
+                  realName
+                }
+                createdAt
+                updatedAt
+              }
+            }
+          }
+        }
+      }
+    }
+    inlineComments(first: $first) {
+      edges {
+        node {
+          id
+          anchor
+          content
+          author {
+            account
+            realName
+          }
+          createdAt
+          updatedAt
+          replies(first: $first) {
+            edges {
+              node {
+                id
+                anchor
+                content
+                author {
+                  account
+                  realName
+                }
+                createdAt
+                updatedAt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

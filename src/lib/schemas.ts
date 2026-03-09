@@ -84,6 +84,10 @@ export const attachNoteToFolderSchema = {
   id: z.string(),
   folder: z.object({ groupId: z.string(), folderName: z.string() }),
 };
+export const getCommentsSchema = {
+  noteId: z.string(),
+  first: z.number().optional(),
+};
 export const updateNoteContentSchema = {
   id: z.string(),
   newContent: z.string(),
