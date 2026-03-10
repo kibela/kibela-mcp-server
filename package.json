@@ -1,6 +1,6 @@
 {
   "name": "kibela-mcp-server",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Kibela MCP Server to manage Kibela's content.",
   "author": "Bit Journey, Inc.",
   "license": "MIT",
